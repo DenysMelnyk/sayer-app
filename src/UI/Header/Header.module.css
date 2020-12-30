@@ -1,0 +1,20 @@
+.Header {
+    height: 104px;
+    background-color: #0e1d3c;
+    color: #ffffff;
+    padding: 14px 20px 28px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AppName {
+    margin: 0 0 2px 0;
+    font-weight: 600;
+}
+
+.AppSubtitle {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+}

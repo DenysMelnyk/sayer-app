@@ -1,0 +1,48 @@
+.Item {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 0 9px 0 17px;
+    position: relative;
+}
+
+.ItemTitle {
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    width: 230px;
+    overflow: hidden;
+    color: #0e1d3c;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.CommentCount {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #0e1d3c;
+}
+
+.DeleteItemBtn,
+.DeleteItemBtn:active,
+.DeleteItemBtn:focus {
+    position: absolute;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #d4145a;
+    width: 95px;
+    height: 71px;
+    right: 0;
+    top: -1px;
+}

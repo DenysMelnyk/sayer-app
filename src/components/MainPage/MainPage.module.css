@@ -1,0 +1,16 @@
+.MainPage {
+    margin-bottom: 20px;
+}
+
+.ItemsWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ItemsList {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+}
