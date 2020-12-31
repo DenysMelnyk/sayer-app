@@ -4,6 +4,7 @@ import Button from "../../UI/Button/Button";
 import Item from "./Item/Item";
 import styles from './MainPage.module.css';
 import store from "../../store/store";
+import {Link} from "react-router-dom";
 import {observer} from "mobx-react";
 
 const MainPage = observer(() => {
@@ -17,17 +18,18 @@ const MainPage = observer(() => {
         </li>
     ))
     return (
-        <div className='MainPage'>
+        <div className={styles.MainPage}>
             <Header type='mainPage'/>
-            <div className={styles.ItemsWrap}>
+            <main className={styles.ItemsWrap}>
                 <ul className={styles.ItemsList}>
                     {itemsList}
                 </ul>
                 <Button
-                    btnAction={() => console.log('Add Item clicked!')}
                     btnType='addItem'
-                >+</Button>
-            </div>
+                >
+                    <Link to='/new-item'>+</Link>
+                </Button>
+            </main>
         </div>
     )
 })

@@ -1,9 +1,12 @@
 .Button,
 .Button:active,
 .Button:focus {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    line-height: 36px;
+    background-color: #313464;
+    color: #ffffff;
     border: none;
     border-radius: 50%;
     outline: none;
@@ -12,6 +15,14 @@
 
 .Button:hover {
     cursor: pointer;
+}
+
+.Button a,
+.Button a:hover,
+.Button a:active {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .AddItemButton,

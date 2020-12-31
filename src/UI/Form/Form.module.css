@@ -1,0 +1,42 @@
+.Form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.Form input,
+.Form input:active,
+.Form input:focus {
+    color: #333333;
+    font-size: 16px;
+    line-height: 36px;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+.Form button {
+    font-size: 20px;
+}
+
+.FormAddItem input,
+.FormAddItem input:active,
+.FormAddItem input:focus {
+    width: calc(100% - 46px);
+    border-bottom: 1px solid #333333;
+    text-indent: 5px;
+}
+
+.FormAddComment {
+    padding: 7px 10px 8px 6px;
+    background-color: #e6e6e6;
+}
+
+.FormAddComment input,
+.FormAddComment input:active,
+.FormAddComment input:focus {
+    width: calc(100% - 52px);
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    text-indent: 10px;
+}

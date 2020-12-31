@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './Header.module.css';
+import Button from "../Button/Button";
+import {Link} from "react-router-dom";
 
 const Header = ({type, headTitle=''}) => {
     let headerStructure;
@@ -18,8 +20,10 @@ const Header = ({type, headTitle=''}) => {
         default:
             headerStructure = (
                 <header className={headerClasses.join(' ')}>
-                    <a href="/">Back</a>
-                    <h2>{headTitle}</h2>
+                    <Button>
+                        <Link to='/'>&larr;</Link>
+                    </Button>
+                    <h2 className={styles.PageName}>{headTitle}</h2>
                 </header>
             )
     }
