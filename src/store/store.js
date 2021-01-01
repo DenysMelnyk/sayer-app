@@ -27,6 +27,13 @@ class Store {
             comments: []
         },
     ];
+    addItem(itemTitleValue){
+        this.messages.push({
+            id: Math.round(1 - Math.random()) * Math.random(),
+            title: itemTitleValue,
+            comments: []
+        })
+    }
     constructor() {
         makeAutoObservable(this)
     }

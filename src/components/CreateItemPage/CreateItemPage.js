@@ -1,15 +1,14 @@
 import React from 'react';
-import {useHistory} from "react-router-dom";
-import {observer} from "mobx-react";
-import Form from "../../UI/Form/Form";
-import Header from "../../UI/Header/Header";
+import {useHistory} from 'react-router-dom';
+import {observer} from 'mobx-react';
+import Form from '../../UI/Form/Form';
+import Header from '../../UI/Header/Header';
 import styles from './CreateItemPage.module.css';
 
-const CreateItemPage = observer(() => {
+const CreateItemPage = observer(({store}) => {
     const history = useHistory();
-    const createNewItemHandler = e => {
-        e.preventDefault();
-        console.log(e.currentTarget.value);
+    const createNewItemHandler = (newItemValue) => {
+        store.addItem(newItemValue);
         history.push('/');
     }
     return (
@@ -21,7 +20,7 @@ const CreateItemPage = observer(() => {
             <main className={styles.NewItemFormWrapper}>
                 <Form
                     type='addItem'
-                    formHandler={e => createNewItemHandler(e)}
+                    dataHandler={createNewItemHandler}
                     placeholderText='New item title..'
                 />
             </main>

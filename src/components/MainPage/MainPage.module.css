@@ -1,5 +1,5 @@
 .MainPage {
-    margin-bottom: 20px;
+    position: relative;
 }
 
 .ItemsWrap {
@@ -11,6 +11,11 @@
 .ItemsList {
     list-style: none;
     padding-left: 0;
-    margin: 0 0 20px 0;
+    margin: 0;
     width: 100%;
+}
+
+.ButtonWrap {
+    position: absolute;
+    bottom: -70px;
 }
