@@ -11,6 +11,9 @@
     border-radius: 50%;
     outline: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Button:hover {
@@ -21,6 +24,7 @@
 .Button a:hover,
 .Button a:active {
     display: block;
+    width: 100%;
     text-decoration: none;
     color: inherit;
 }

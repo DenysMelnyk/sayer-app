@@ -6,6 +6,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+.ItemsWrapScrollable {
+    height: 464px;
+    overflow-y: scroll;
+    scrollbar-width: thin; /* firefox only */
+    scrollbar-color: #e6e6e6 #ffffff; /* firefox only */
+}
+
+.ItemsWrapScrollable::-webkit-scrollbar {
+    width: 12px;
+}
+
+.ItemsWrapScrollable::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.ItemsWrapScrollable::-webkit-scrollbar-thumb {
+    background-color: #e6e6e6;
+    border-radius: 1px;
+    border: 4px solid #ffffff;
 }
 
 .ItemsList {
@@ -18,4 +40,9 @@
 .ButtonWrap {
     position: absolute;
     bottom: -70px;
+}
+
+.ItemsWrapScrollable .ButtonWrap{
+    position: fixed;
+    bottom: 150px;
 }

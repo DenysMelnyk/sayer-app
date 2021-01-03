@@ -27,16 +27,19 @@ class Store {
             comments: []
         },
     ];
+
     addItem(itemTitleValue){
         this.messages.push({
-            id: Math.round(1 - Math.random()) * Math.random(),
+            id: Math.round(1 - Math.random()) * Math.random() + Math.random(),
             title: itemTitleValue,
             comments: []
         })
     }
+
     deleteItem(id){
         this.messages = this.messages.filter((item => item.id !== id));
     }
+
     constructor() {
         makeObservable(this, {
             messages: observable,
