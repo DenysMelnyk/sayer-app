@@ -1,4 +1,4 @@
-import {makeAutoObservable} from "mobx";
+import {makeObservable, observable, action} from "mobx";
 
 class Store {
     messages = [
@@ -34,8 +34,15 @@ class Store {
             comments: []
         })
     }
+    deleteItem(id){
+        this.messages = this.messages.filter((item => item.id !== id));
+    }
     constructor() {
-        makeAutoObservable(this)
+        makeObservable(this, {
+            messages: observable,
+            addItem: action.bound,
+            deleteItem: action.bound
+        });
     }
 }
 

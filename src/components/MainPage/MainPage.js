@@ -11,8 +11,10 @@ const MainPage = observer(({store}) => {
     const itemsList = store.messages.map(item => (
         <Item
             key={item.id}
+            itemId={item.id}
             title={item.title}
             commentsCount={item.comments.length}
+            deleteItem={store.deleteItem}
         />
     ))
     return (

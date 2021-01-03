@@ -1,16 +1,20 @@
 import React, {useState} from 'react';
 import styles from './Item.module.css';
 
-const Item = ({title, commentsCount}) => {
+const Item = ({title, commentsCount, deleteItem, itemId}) => {
     const [showDeleteBtn, setShowDeleteBtn] = useState(false);
 
     const deleteButtonHandler = () => {
         setShowDeleteBtn(prevState => !prevState)
     }
 
+    const deleteItemAction = () => {
+        deleteItem(itemId)
+    }
+
     const deleteBtn = showDeleteBtn && (
         <button
-            onClick={() => console.log('Delete clicked')}
+            onClick={() => deleteItemAction()}
             className={styles.DeleteItemBtn}
         >Delete</button>
     );
