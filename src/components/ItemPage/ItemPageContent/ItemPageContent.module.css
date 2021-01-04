@@ -1,0 +1,23 @@
+.ItemPageContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.CommentPlaceholder {
+    margin: 0;
+    color: #666666;
+    font-size: 15px;
+    padding: 20px 15px;
+}
+
+.CommentsWrapper {
+    position: relative;
+    height: 464px;
+}
+
+.NewCommentFormWrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+}

@@ -22,6 +22,7 @@ const MainPage = ({messages, deleteItem}) => {
         <Item
             key={item.id}
             itemId={item.id}
+            itemSlug={item.slug}
             title={item.title}
             commentsCount={item.comments.length}
             deleteItem={deleteItem}

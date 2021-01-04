@@ -20,6 +20,14 @@
     font-weight: 500;
 }
 
+.ItemTitle a,
+.ItemTitle a:hover,
+.ItemTitle a:visited,
+.ItemTitle a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 .CommentCount {
     width: 36px;
     height: 36px;

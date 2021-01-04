@@ -1,0 +1,33 @@
+.Comment {
+    padding: 10px 16px 35px 10px;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+}
+
+.Comment:first-child {
+    padding-top: 20px
+}
+
+.Comment:last-child {
+    border-bottom: 1px solid transparent;
+}
+
+.UserImgPlaceholder {
+    width: 65px;
+    padding-right: 20px;
+}
+
+.UserImg {
+    width: 50px;
+    height: 50px;
+    background-color: #af7d93;
+}
+
+.Comment:nth-child(odd) .UserImg{
+    background-color: #313464;
+}
+
+.CommentText {
+    color: #666666;
+    font-size: 15px;
+}

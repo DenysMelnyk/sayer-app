@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import styles from './Item.module.css';
+import {Link} from "react-router-dom";
 
-const Item = ({title, commentsCount, deleteItem, itemId}) => {
+const Item = ({title, commentsCount, deleteItem, itemId, itemSlug}) => {
     const [showDeleteBtn, setShowDeleteBtn] = useState(false);
 
     const deleteButtonHandler = () => {
@@ -24,7 +25,7 @@ const Item = ({title, commentsCount, deleteItem, itemId}) => {
             <h4
                 className={styles.ItemTitle}
             >
-               {title}
+               <Link to={`/${itemSlug}`}>{title}</Link>
             </h4>
             {commentsCount
                 ? <span className={styles.CommentCount}>{commentsCount}</span>
