@@ -50,3 +50,8 @@
 .DeleteItemBtn:hover {
     cursor: pointer;
 }
+
+.Item:first-child .DeleteItemBtn {
+    height: 70px;
+    top: 0;
+}

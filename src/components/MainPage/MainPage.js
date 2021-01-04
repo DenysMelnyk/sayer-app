@@ -4,9 +4,8 @@ import Button from "../../UI/Button/Button";
 import Item from "./Item/Item";
 import styles from './MainPage.module.css';
 import {Link} from "react-router-dom";
-import {observer} from "mobx-react";
 
-const MainPage = observer(({store}) => {
+const MainPage = ({messages, deleteItem}) => {
     const [height, setHeight] = useState(0);
 
     const measuredRef = useCallback(node => {
@@ -19,13 +18,13 @@ const MainPage = observer(({store}) => {
         ? [styles.ItemsWrap]
         : [styles.ItemsWrap, styles.ItemsWrapScrollable]
 
-    const itemsList = store.messages.map(item => (
+    const itemsList = messages.map(item => (
         <Item
             key={item.id}
             itemId={item.id}
             title={item.title}
             commentsCount={item.comments.length}
-            deleteItem={store.deleteItem}
+            deleteItem={deleteItem}
         />
     ))
     return (
@@ -48,6 +47,6 @@ const MainPage = observer(({store}) => {
             </main>
         </div>
     )
-})
+}
 
 export default MainPage;

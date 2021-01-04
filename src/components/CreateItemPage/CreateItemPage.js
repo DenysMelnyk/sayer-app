@@ -1,14 +1,13 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import {observer} from 'mobx-react';
 import Form from '../../UI/Form/Form';
 import Header from '../../UI/Header/Header';
 import styles from './CreateItemPage.module.css';
 
-const CreateItemPage = observer(({store}) => {
+const CreateItemPage = ({addItem}) => {
     const history = useHistory();
     const createNewItemHandler = (newItemValue) => {
-        store.addItem(newItemValue);
+        addItem(newItemValue);
         history.push('/');
     }
     return (
@@ -26,6 +25,6 @@ const CreateItemPage = observer(({store}) => {
             </main>
         </div>
     );
-});
+};
 
 export default CreateItemPage;

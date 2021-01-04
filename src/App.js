@@ -5,24 +5,27 @@ import styles from './App.module.css';
 import store from "./store/store";
 import MainPage from "./components/MainPage/MainPage";
 import CreateItemPage from "./components/CreateItemPage/CreateItemPage";
+import {observer} from "mobx-react";
 
-const App = () => {
+const App = observer(() => {
     return (
         <div className={styles.App}>
             <Container>
                 <div className={styles.AppBody}>
                     <Switch>
                         <Route path='/new-item'>
-                            <CreateItemPage store={store}/>
+                            <CreateItemPage addItem={store.addItem}/>
                         </Route>
                         <Route path='/'>
-                            <MainPage store={store}/>
+                            <MainPage
+                                deleteItem={store.deleteItem}
+                                messages={store.messages}/>
                         </Route>
                     </Switch>
                 </div>
             </Container>
         </div>
     );
-}
+})
 
 export default App;
