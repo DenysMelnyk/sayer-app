@@ -9,7 +9,7 @@ const MainPage = ({messages, deleteItem}) => {
     const [height, setHeight] = useState(0);
 
     const measuredRef = useCallback(node => {
-        if (node !== null) {
+        if (node !== null){
             setHeight(node.getBoundingClientRect().height);
         }
     }, []);

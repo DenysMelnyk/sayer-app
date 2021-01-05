@@ -55,12 +55,21 @@ class Store {
         this.messages = this.messages.filter((item => item.id !== id));
     }
 
+    addComment(parentItemSlug, commentValue) {
+        const currentMessage = this.messages.filter(item => item.slug === parentItemSlug)[0];
+        currentMessage.comments.push({
+            id:  Math.round(1 - Math.random()) * Math.random() + Math.random(),
+            text: commentValue
+        })
+    }
+
     constructor() {
         makeObservable(this, {
             messages: observable,
             counter: observable,
             addItem: action.bound,
-            deleteItem: action.bound
+            deleteItem: action.bound,
+            addComment: action.bound
         });
     }
 }

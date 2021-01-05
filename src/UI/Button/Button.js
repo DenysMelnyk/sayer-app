@@ -12,7 +12,7 @@ const Button = ({
     return (
         <button
             className={buttonStyles.join(' ')}
-            onClick={() => btnAction()}
+            onClick={(e) => btnAction(e)}
         >
             {children}
         </button>

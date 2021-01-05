@@ -18,7 +18,10 @@ const App = observer(() => {
                             <CreateItemPage addItem={store.addItem}/>
                         </Route>
                         <Route path='/:id'>
-                            <ItemPage chosenMessage={store.messages}/>
+                            <ItemPage
+                                chosenMessage={store.messages}
+                                addComment={store.addComment}
+                            />
                         </Route>
                         <Route path='/'>
                             <MainPage

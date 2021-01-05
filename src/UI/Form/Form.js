@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from './Form.module.css';
 import Button from '../Button/Button';
+import {Link} from "react-router-dom";
 
 const Form = ({type, dataHandler, placeholderText}) => {
     const [inputValue, setInputValue] = useState('');
@@ -10,10 +11,12 @@ const Form = ({type, dataHandler, placeholderText}) => {
 
     const inputHandler = e => setInputValue(e.target.value);
 
-
     const submitHandler = e => {
         e.preventDefault();
-        dataHandler(inputValue);
+        if(inputValue){
+            dataHandler(inputValue);
+            setInputValue('');
+        }
     }
 
     return (
@@ -26,7 +29,9 @@ const Form = ({type, dataHandler, placeholderText}) => {
                 placeholder={placeholderText}
                 onChange={ e => inputHandler(e)}
             />
-            <Button>&gt;</Button>
+            <Button btnAction={submitHandler}>
+                <Link to='/'>&gt;</Link>
+            </Button>
         </form>
     )
 }
