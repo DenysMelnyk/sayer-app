@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import styles from './Form.module.css';
 import Button from '../Button/Button';
-import {Link} from "react-router-dom";
 
 const Form = ({type, dataHandler, placeholderText}) => {
     const [inputValue, setInputValue] = useState('');
@@ -30,7 +29,7 @@ const Form = ({type, dataHandler, placeholderText}) => {
                 onChange={ e => inputHandler(e)}
             />
             <Button btnAction={submitHandler}>
-                <Link to='/'>&gt;</Link>
+                &gt;
             </Button>
         </form>
     )

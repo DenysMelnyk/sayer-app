@@ -1,23 +1,11 @@
-import React, {useState, useCallback} from 'react';
+import React from 'react';
 import styles from './ItemPageContent.module.css';
 import Header from "../../../UI/Header/Header";
 import Comment from "./Comment/Comment";
 import Form from "../../../UI/Form/Form";
+import ScrollableBlock from "../../../UI/ScrollableBlock/ScrollableBlock";
 
 const ItemPageContent = ({title, comments, addNewComment}) => {
-    const [height, setHeight] = useState(0);
-
-    const measuredRef = useCallback(node => {
-        if (node !== null){
-            setHeight(node.getBoundingClientRect().height);
-        }
-    }, []);
-
-    console.log(height)
-
-    const commentBodyClasses = height > 300
-        ? [styles.CommentsBody, styles.CommentsBodyScroll]
-        : [styles.CommentsBody];
 
     const showComments = comments.length > 0
         ? comments.map(item => (
@@ -32,12 +20,9 @@ const ItemPageContent = ({title, comments, addNewComment}) => {
         <div className={styles.ItemPageContent}>
             <Header headTitle={title}/>
             <main className={styles.CommentsWrapper}>
-                <div
-                    className={commentBodyClasses.join(' ')}
-                    ref={measuredRef}
-                >
+                <ScrollableBlock heightValue={412}>
                     {showComments}
-                </div>
+                </ScrollableBlock>
                 <div className={styles.NewCommentFormWrapper}>
                     <Form
                         placeholderText='New comment goes here..'
